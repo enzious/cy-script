@@ -1,0 +1,16 @@
+{
+  "default": {
+    "publicPath": "http://localhost:8188/",
+    "mode": "development",
+    "outputPath": "./build/release"
+  },
+  "debug": {
+  },
+  "release": {
+    "mode": "production",
+    "outputPath": "./build/release"
+  },
+  "dev-server": {
+    "publicPath": "http://localhost:8188/"
+  }
+}
