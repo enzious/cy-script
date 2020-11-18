@@ -1,0 +1,12 @@
+/build
+/node_modules
+/npm-debug.log
+/*.sublime-workspace
+/*.sublime-project
+*.swp
+*.swo
+/package-lock.json
+/.vs
+.vscode/settings.json
+/deploy.sh
+/configs.json

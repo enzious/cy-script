@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
+    "target": "esnext",
+    "module": "esnext",
+    "rootDir": "./src",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "allowJs": false,
+    "strict": false,
+    "isolatedModules": false,
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "baseUrl": "./",
+    "paths": {
+      "*": [
+        "src/*",
+        "src/types/*"
+      ]
+    },
+    "typeRoots": ["node_modules/@types"],
+    "declaration": false
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "./node_modules/**/*",
+    "./src/fonts/**/*",
+    "./src/html/**/*",
+    "./build/**/*"
+  ]
+}

@@ -1,0 +1,708 @@
+/* Emote */
+
+.channel-emote {
+    max-width: 90px;
+    max-height: 58px;
+}
+
+/* General layout */
+
+#ChatcolorToggle {
+    display: none;
+}
+#main {
+    margin-top: 10px;
+    margin-bottom: 9px;
+}
+#videowrap-header {
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+#emote_suggest {
+    position: absolute;
+}
+#motdwrap {
+    margin-bottom: 20px;
+}
+#messagebuffer,
+#userlist {
+    border-color: #1e2023;
+}
+#chatheader,
+#currenttitle,
+#videowrap-header {
+    border: 0;
+    border-bottom-width: 0;
+    border-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+a.navbar-brand {
+    //background-image: url('https://i.imgur.com/w5DOMDa.png') !important;
+    background-repeat: no-repeat;
+    width: 90px;
+    background-position: center center;
+    background-size: auto 43px;
+    height: 100%;
+    margin-right: 10px!important;
+    margin-left: 15px!important;
+    font-size: 0!important;
+}
+/*.navbar-inverse {
+    background-image: -moz-linear-gradient(top, #272b2d 0%, #222628 22%, #131516 100%)!important;
+    background-image: -webkit-linear-gradient(top, #272b2d 0%, #222628 22%, #131516 100%)!important;
+    background-image: linear-gradient(to bottom, #272b2d 0%, #222628 22%, #131516 100%)!important
+}*/
+.navbar-nav>li>a {
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
+    border-right: none
+}
+.nav .navbar-nav {
+    border-right: 1px solid rgba(0, 0, 0, 0.3)
+}
+.navbar-nav>li>a:hover,
+.navbar-nav>.open>a:hover {
+    background-color: initial!important
+}
+.navbar-nav>.open>a {
+    backkground-color: #121415!important
+}
+.neon {
+    text-shadow: 0 0 5px #ff00de, 0 0 10px #ff00de, 0 0 15px #ff00de;
+    color: white;
+}
+@media screen and (max-width: 991px) {
+    .columns {
+        overflow: scroll
+    }
+    ;
+    #afkCount {
+        display: none
+    }
+}
+@media screen and (min-width: 992px) and (max-width: 1400px) {
+    .columns {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2
+    }
+}
+@media screen and (min-width: 1401px) {
+    .columns {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3
+    }
+}
+@media screen and (max-width: 991px) {
+    #chatwrap {
+        top: -20px
+    }
+    #videowrap {
+        bottom: 28px
+    }
+}
+@media screen and (max-width: 480px) and (min-width: 320px) {
+    #afkCount,
+    #animationbutton,
+    #cinematoggle,
+    #motdwrap,
+    #topbutton {
+        display: none
+    }
+    #userlist {
+        font-size: .7em
+    }
+    #chatwrap {
+        top: 1px
+    }
+    #messagebuffer {
+        font-size: .9em
+    }
+    .timestamp {
+        font-size: .75em
+    }
+    .channel-emote {
+        max-width: 40px;
+        max-height: 27px
+    }
+    .server-whisper {
+        font-size: .7em
+    }
+    #rightcontrols {
+        padding-top: 15px!important
+    }
+}
+@media screen and (max-width: 640px) and (min-width: 481px) {
+    #afkCount,
+    #cinematoggle,
+    #motdwrap {
+        display: none;
+    }
+    #messagebuffer {
+        font-size: .9e;
+    }
+    #chatwrap {
+        top: 1px;
+    }
+    #userlist {
+        font-size: .8em;
+    }
+    .channel-emote {
+        max-width: 65px;
+        max-height: 45px;
+    }
+    .server-whisper {
+        font-size: .7em;
+    }
+    #rightcontrols {
+        padding-top: 15px!important;
+    }
+}
+@media screen and (max-width: 1340px) {
+    .btn {
+        padding: 4px 8px;
+    }
+}
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgba(20, 22, 26, 1);
+}
+::-webkit-scrollbar-thumb {
+    background-color: #333;
+    //-webkit-box-shadow: 0 0 6px #000 inset;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #4d4d4d;
+}
+::-webkit-scrollbar-track {
+    //-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    border-radius: 10px;
+}
+/* Controls */
+
+#leftcontrols .btn {
+    margin-right: 0;
+}
+/*@media (max-width: 2559px) and (min-width: 1650px) {
+    #leftcontrols {
+        left: 95px;
+    }
+}*/
+/* chatwrap */
+/*#chatwrap {
+    top:15px;
+}*/
+/*#topbutton {
+    display: none
+}*/
+
+#messagebuffer {
+    overflow-x: hidden;
+}
+#usercount.highcount {
+    color: black !important;
+    text-shadow: 1px 0 #0bf, -1px 0 #0bf, 0 1px #0bf, 0 -1px #0bf!important;
+}
+#usercount.highb {
+    color: black !important;
+    text-shadow: 1px 0 #0f0, -1px 0 #0f0, 0 1px #0f0, 0 -1px #0f0!important;
+}
+#usercount.highc {
+    color: black !important;
+    text-shadow: 1px 0 #c475ff, -1px 0 #c475ff, 0 1px #c475ff, 0 -1px #c475ff!important;
+}
+#usercount.highd {
+    color: black !important;
+    text-shadow: 1px 0 #f00, -1px 0 #f00, 0 1px #f00, 0 -1px #f00!important;
+}
+#usercount.highe {
+    color: black !important;
+    text-shadow: 1px 0 #f90,-1px 0 #f90,0 1px #f90,0 -1px #f90 !important;
+}
+.label-topbutton {
+    background-color: #c00;
+}
+.label-animationbutton {
+    background-color: #ff69b4;
+}
+.timestamp {
+    color: #6F6F6F;
+}
+.nick-highlight {
+    background-color: rgba( 144, 44, 44, 0.6);
+}
+.nick-hover {
+    background-color: rgba( 88, 88, 127, 0.6);
+}
+.poll-notify {
+    font-size: 13px;
+}
+#messagebuffer video {
+    max-width: 100%;
+}
+video.webm {
+    display: inline;
+    vertical-align: middle;
+    max-height: 320px;
+}
+video.webmote {
+    max-height: 200px;
+}
+.chatAvatar {
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    padding: 0px;
+    overflow: hidden;
+    width: auto;
+    max-height: 54px;
+    max-width: 64px;
+}
+#afkCount {
+    font-size: 12px;
+    overflow: visible;
+    position: absolute;
+    z-index: 1;
+}
+@media (max-width: 1000px) {
+    #afkCount {
+        padding: 0 6px;
+    }
+}
+#afkCount span {
+    padding: 0 6px;
+}
+#afkCount .afkusercount {
+    color: #8e8e8e;
+}
+/* Userlist */
+
+.userlist_afk [class*="userlist-"] {
+    opacity: 0.5 !important;
+}
+span.glyphicon.glyphicon-star-empty {
+    -webkit-animation: color-change 0.5s 300;
+    -moz-animation: color-change 0.5s 300;
+    animation: color-change 0.5s 300;
+}
+#voteskip.btn.btn-sm.btn-default:hover {
+    -webkit-animation: color-change 0.5s 300;
+    -moz-animation: color-change 0.5s 300;
+    animation: color-change 0.5s 300;
+    background-image: url("https://i.imgur.com/L0NY8l7.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: silver;
+}
+.userlist_leader {
+    -webkit-animation: color-change 0.5s 300;
+    -moz-animation: color-change 0.5s 300;
+    animation: color-change 0.5s 300;
+}
+@-webkit-keyframes color-change {
+    0%, 100% {
+        text-shadow: 0 0 3px #F0F;
+        color: #F0F;
+    }
+    33% {
+        text-shadow: 0 0 3px #FF0;
+        color: #FF0;
+    }
+    67% {
+        text-shadow: 0 0 3px #0FF;
+        color: #0FF;
+    }
+}
+@-moz-keyframes color-change {
+    0%, 100% {
+        text-shadow: 0 0 3px #F0F;
+        color: #F0F;
+    }
+    33% {
+        text-shadow: 0 0 3px #FF0;
+        color: #FF0;
+    }
+    67% {
+        text-shadow: 0 0 3px #0FF;
+        color: #0FF;
+    }
+}
+@-ms-keyframes color-change {
+    0%, 100% {
+        text-shadow: 0 0 3px #F0F;
+        color: #F0F;
+    }
+    33% {
+        text-shadow: 0 0 3px #FF0;
+        color: #FF0;
+    }
+    67% {
+        text-shadow: 0 0 3px #0FF;
+        color: #0FF;
+    }
+}
+@-o-keyframes color-change {
+    0%, 100% {
+        text-shadow: 0 0 3px #F0F;
+        color: #F0F;
+    }
+    33% {
+        text-shadow: 0 0 3px #FF0;
+        color: #FF0;
+    }
+    67% {
+        text-shadow: 0 0 3px #0FF;
+        color: #0FF;
+    }
+}
+@keyframes color-change {
+    0%, 100% {
+        text-shadow: 0 0 3px #F0F;
+        color: #F0F;
+    }
+    33% {
+        text-shadow: 0 0 3px #FF0;
+        color: #FF0;
+    }
+    67% {
+        text-shadow: 0 0 3px #0FF;
+        color: #0FF;
+    }
+}
+/* Video title */
+
+#currentblame {
+    display: inline-block;
+    font-size: 1em;
+    float: right;
+    //position: absolute;
+    right: 40px;
+}
+/* REMOVING THIS FOR NOW UNTIL WE FIND A BETTER WAY TO IMPLEMENT */
+
+span[id^="resize-video-"] {
+    float: right;
+}
+#currenttitle img {
+    position: relative;
+    bottom: 10px;
+    height: inherit;
+}
+#currenttitle {
+    font-size: 1.3em;
+    padding-top: 19px;
+    height: 55px;
+    position: relative;
+    //white-space: nowrap;
+    max-width: 1080px;
+    text-overflow: ellipsis;
+}
+p#currenttitle {
+    font-size: 18px;
+}
+/* Pollwrap */
+
+div.well.active:hover {
+    opacity: 1.0 !important;
+}
+div.well.active {
+    opacity: 0.9;
+}
+#pollwrap {
+    overflow: auto!important;
+}
+.playlist-thumbnail {
+    max-height: 180px;
+    max-width: 240px;
+}
+div.well.muted {
+    opacity: 0.4;
+}
+div#pollwrap.col-lg-12.col-md-12 {
+    max-height: 1000px!important;
+    min-height: 166px;
+    background-repeat: no-repeat;
+    background-position: center 25px;
+}
+div#pollwrap.col-lg-12.col-md-12 {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+/*  PM windows */
+
+.pm-panel,
+.pm-panel-placeholder {
+    min-width: 440px;
+}
+div.pm-buffer.linewrap {
+    overflow-x: hidden;
+}
+span.server-whisper {
+    font-size: 13px;
+    font-weight: bold;
+}
+/* Playlist stuff */
+
+#playlistrow {
+    position: relative;
+}
+/*bottom:23px*/
+
+ul#queue {
+    font-weight: bold;
+}
+.qe_time {
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.qe_blame {
+    float: right;
+    font-family: Monospace;
+}
+.qe_blame {
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.queue_temp {
+    background-image: none;
+    //display: none;
+}
+.queue_active.queue_temp {
+    background-image: none;
+}
+.queue_entry {
+    border-width: 1px 0 1px 0;
+    border-color: black;
+    padding: 2px 4px;
+}
+.videolist {
+    background-image: url(https://i.imgur.com/O6kAd51.png);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.queue_entry {
+    opacity: .975;
+}
+ul#queue {
+    list-style: decimal;
+    padding-left: 30px;
+    background-color: rgba(20, 22, 26, 0.7);
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+}
+p#currenttitle {
+    overflow-x: hidden;
+}
+div#plmeta {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-top: 0;
+    background-color: rgba(20, 22, 26, 0.7);
+}
+#pllength {
+    margin-right: 30px;
+}
+#plcount {
+    margin-left: 35px;
+}
+#history_link {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 50%;
+}
+.qbtn-alarm {
+    float: right;
+}
+.qbtn-notified,
+.qbtn-notified:active,
+.qbtn-notified:hover,
+.qbtn-notified:focus {
+    background-color: #c00;
+    border-color: #c00;
+}
+.dick .channel-emote {
+    -webkit-clip-path: polygon(51% 4%, 46% 3%, 42% 4%, 38% 6%, 36% 9%, 34% 11%, 32% 14%, 30% 16%, 28% 18%, 26% 21%, 25% 25%, 25% 28%, 27% 31%, 28% 32%, 29% 33%, 30% 36%, 31% 41%, 31% 46%, 31% 52%, 32% 57%, 32% 62%, 33% 65%, 33% 66%, 29% 66%, 23% 66%, 19% 66%, 16% 68%, 11% 71%, 9% 74%, 8% 77%, 8% 81%, 8% 86%, 11% 90%, 14% 93%, 17% 95%, 23% 96%, 27% 97%, 33% 97%, 38% 96%, 42% 95%, 46% 94%, 49% 93%, 50% 93%, 57% 94%, 61% 96%, 65% 96%, 71% 97%, 75% 96%, 81% 96%, 86% 94%, 89% 91%, 91% 88%, 93% 85%, 94% 81%, 94% 77%, 91% 73%, 88% 69%, 81% 66%, 76% 65%, 71% 65%, 67% 65%, 69% 61%, 69% 56%, 70% 52%, 70% 48%, 71% 44%, 71% 41%, 71% 37%, 71% 34%, 71% 32%, 71% 31%, 74% 31%, 77% 28%, 77% 25%, 75% 22%, 73% 19%, 71% 15%, 66% 10%, 63% 8%, 61% 5%, 58% 3%, 55% 3%, 53% 4%);
+    clip-path: polygon(51% 4%, 46% 3%, 42% 4%, 38% 6%, 36% 9%, 34% 11%, 32% 14%, 30% 16%, 28% 18%, 26% 21%, 25% 25%, 25% 28%, 27% 31%, 28% 32%, 29% 33%, 30% 36%, 31% 41%, 31% 46%, 31% 52%, 32% 57%, 32% 62%, 33% 65%, 33% 66%, 29% 66%, 23% 66%, 19% 66%, 16% 68%, 11% 71%, 9% 74%, 8% 77%, 8% 81%, 8% 86%, 11% 90%, 14% 93%, 17% 95%, 23% 96%, 27% 97%, 33% 97%, 38% 96%, 42% 95%, 46% 94%, 49% 93%, 50% 93%, 57% 94%, 61% 96%, 65% 96%, 71% 97%, 75% 96%, 81% 96%, 86% 94%, 89% 91%, 91% 88%, 93% 85%, 94% 81%, 94% 77%, 91% 73%, 88% 69%, 81% 66%, 76% 65%, 71% 65%, 67% 65%, 69% 61%, 69% 56%, 70% 52%, 70% 48%, 71% 44%, 71% 41%, 71% 37%, 71% 34%, 71% 32%, 71% 31%, 74% 31%, 77% 28%, 77% 25%, 75% 22%, 73% 19%, 71% 15%, 66% 10%, 63% 8%, 61% 5%, 58% 3%, 55% 3%, 53% 4%);
+}
+.emoji {
+    font-size: 300%;
+}
+.dose .channel-emote {
+    -webkit-filter: contrast(0) sepia(1) hue-rotate(60deg) contrast(3) brightness(.7) drop-shadow(6px 4px 0px purple);
+    filter: contrast(0) sepia(1) hue-rotate(60deg) contrast(4) brightness(.8) drop-shadow(6px 4px 0px purple);
+}
+/* fix textwrap in polls */
+
+.well {
+    word-wrap: break-word;
+}
+@keyframes shake {
+    0%, 100% {
+        transform: translate3d(0, 2px, 0);
+    }
+    25% {
+        transform: translate3d(4px, 0, 0);
+    }
+    50% {
+        transform: translate3d(0, -2px, 0);
+    }
+    75% {
+        transform: translate3d(-4px, 0, 0);
+    }
+}
+.literal-shake {
+    animation: shake .09s linear infinite;
+    display: inline-block;
+}
+.postContainer {
+    max-height: 220px;
+    overflow-y: auto;
+}
+.btn-purple,
+.btn-purple:active,
+.btn-purple:focus {
+    display: inline-block;
+    background-image: -webkit-linear-gradient(#5f3ba0, #3b206d 60%, #482c79);
+    background-image: -o-linear-gradient(#5f3ba0, #3b206d 60%, #482c79);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#5f3ba0), color-stop(60%, #3b206d), to(#482c79));
+    background-image: linear-gradient(#5f3ba0, #3b206d 60%, #482c79);
+    background-repeat: no-repeat;
+    -webkit-filter: none;
+    filter: none;
+    border-color: #4b2b73;
+}
+.btn-purple:hover {
+    background-image: -webkit-linear-gradient(#442a71, #251444 60%, #311e52);
+    background-image: -o-linear-gradient(#442a71, #251444 60%, #311e52);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#442a71), color-stop(60%, #251444), to(#311e52));
+    background-image: linear-gradient(#442a71, #251444 60%, #311e52);
+    border-color: #4b2b73;
+}
+.spoiler img {
+    -webkit-filter: brightness(0%);
+    /* Safari */
+    
+    filter: brightness(0%);
+    background-color: none;
+}
+.spoiler:hover img {
+    -webkit-filter: none;
+    filter: none;
+}
+.poll-notify {
+    color: #f90;
+    margin: 5px 0;
+    border: 1px solid #f90;
+    background: rgba(255, 128, 0, 0.1);
+    background: linear-gradient(rgba(255, 128, 0, .2) 0%, rgba(255, 128, 0, .07) 100%);
+    line-height: 2;
+    text-align: center;
+    border-image: linear-gradient(rgba(255, 128, 0, .8) 0%, rgba(255, 128, 0, .1) 100%) 1 1 1 1 repeat repeat;
+}
+#togglemotd {
+    position: absolute;
+    right: 18px;
+    top: 2px;
+}
+#messagebuffer .av {
+    color: #51ab7a;
+    font-style: italic;
+}
+#messagebuffer .mv {
+    color: #8834a9;
+    font-style: italic;
+}
+#messagebuffer .av .av-queueby,
+#messagebuffer .av .av-title,
+#messagebuffer .av .av-to {
+    color: #6dff8d
+}
+#messagebuffer .mv .mv-queueby,
+#messagebuffer .mv .mv-title,
+#messagebuffer .mv .mv-from,
+#messagebuffer .mv .mv-to {
+    color: #d774ff;
+}
+@keyframes redbgflash {
+    0% {
+        background-color: #882c2c;
+    }
+    30%,
+    70% {
+        background-color: #270606;
+    }
+    100% {
+        background-color: #882c2c;
+    }
+}
+.rotate-emotes img {
+    transform: inherit;
+    max-height: 45px!important;
+    max-width: 45px!important
+}
+@keyframes data {
+    0% {
+        transform: translate3d(0, 0, 0);
+        filter: sepia(1) brightness(1);
+    }
+    14.3% {
+        transform: translate3d(0, 0, 0);
+        filter: sepia(1) brightness(1.15);
+    }
+    28.5% {
+        transform: translate3d(-1px, 1px, 0);
+        filter: sepia(1) brightness(1.3);
+    }
+    42.8% {
+        transform: translate3d(0, 1px, 0);
+        filter: sepia(1) brightness(1.7);
+    }
+    57.1% {
+        transform: translate3d(1px, 2px, 0);
+        filter: sepia(1) brightness(1.15);
+    }
+    71.4% {
+        transform: translate3d(2px, 1px, 0);
+        filter: sepia(1) brightness(1.7);
+    }
+    85.7% {
+        transform: translate3d(1px, 1px, 0);
+        filter: sepia(1) brightness(1.3);
+    }
+}
+.data-anim {
+    animation: data .03s steps(1) infinite;
+    display: inline-block;
+}
+
+/* Put temp css below until merged. */
+
+/* EMBEDS UNTIL HUNTER UNFUCKS HTTPS */
+.image-embed-tiny { max-height: 40px; max-width: 10%; }
+.image-embed-small  { max-height: 150px; max-width: 55%; }
+.image-embed-medium { max-height: 240px; max-width: 360px; }
+.image-embed-large  { max-height: 320px; min-width: 40%; max-width: 66%; }
+
+.user-dropdown
+{
+  min-width: 250px !important;
+  width: 250px;
+  .actions
+  {
+    width: 100%;
+    .btn
+    {
+      display: inline-block;
+      width: 50%;
+      border-radius: 0;
+      &:first-child:not(:last-child)
+      {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+    }
+  }
+}
