@@ -159,10 +159,11 @@ module.exports = function(env) {
     },
     resolve: {
       modules: [path.resolve('./src'), path.resolve('node_modules')],
-      extensions: ['.js', '.jsx'],
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
       alias: {
         jquery: path.resolve(__dirname, './src/js/backbone/jquery.js'),
-        Backbone: path.resolve(__dirname, './src/js/backbone/backbone.js')
+        Backbone: path.resolve(__dirname, './src/js/backbone/backbone.js'),
+        PlainComponent: path.resolve(__dirname, './src/js/components/PlainComponent.ts')
       }
     },
     plugins: [
@@ -174,7 +175,8 @@ module.exports = function(env) {
         Backbone: 'Backbone',
         '_': 'underscore/underscore',
         'moment': 'moment',
-        'linkifyHtml': 'linkifyjs/html'
+        'linkifyHtml': 'linkifyjs/html',
+        PlainComponent: ['PlainComponent', 'default'],
       }),
       new webpack.LoaderOptionsPlugin({
         minimize: true, debug: false

@@ -35,27 +35,10 @@ window.addChatMessage = function(data) {
     if (data.meta.shadow && !USEROPTS.show_shadowchat) {
         return;
     }
-      if(!CLIENT.displayOpts.noRepeat && lastUserMessage[data.username] == data.msg) {
-        return;
-    } else if(!CLIENT.displayOpts.noRepeat) {
-        lastUserMessage[data.username] = data.msg;
-    }
 
-    if(!CLIENT.displayOpts.botMsg.polls && data.username==CHANNEL.bot && data.msg.indexOf("Poll")===0){
-        return;
-    }
-    if(!CLIENT.displayOpts.botMsg.modMsg && data.username==CHANNEL.bot && data.msg.indexOf("Voteskip Passed")===0){
-        return;
-    }
-    if(!CLIENT.displayOpts.botMsg.pokeroll && data.username==CHANNEL.bot && data.msg.indexOf("caught: #")>0){
-        return;
-    }
-
-    if(!CLIENT.displayOpts.botMsg.pokeroll && data.msg.indexOf("$pokeroll")===0){
-        return;
-    }
     var msgBuf = $("#messagebuffer");
     var div = formatChatMessage(data, LASTCHAT);
+
     // Incoming: a bunch of crap for the feature where if you hover over
     // a message, it highlights messages from that user
     var safeUsername = data.username.replace(/[^\w-]/g, '\\$');

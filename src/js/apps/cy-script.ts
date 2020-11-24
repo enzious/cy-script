@@ -7,27 +7,33 @@ import { initializePlaylist, } from 'js/gui/playlist';
 import { initializeVidResize, } from 'js/gui/video';
 import { initializePoll, } from 'js/gui/poll';
 
-const CyScript = Backbone.Model.extend({
-  initialize: function(options) {
+class CyScript extends PlainComponent {
+  options: any;
+  logger: Logger;
+  smartAfkActive: boolean = false;
+
+  constructor(options: any) {
+    super();
     this.options = Object.assign({
-      defaultExample: true,
     }, options || {});
 
-    window.cyScript = this;
+    (window as any).cyScript = this;
+
     this.logger = new Logger();
+
     this.on('legacy-loaded', () => {
       let init = () => {
-        window.cyScript.init();
+        this.init();
       }
-      if (documentReady) {
+      if ((window as any).documentReady) {
         init();
       } else {
-        $(document).ready(init);
+        $(() => init());
       }
     });
-  },
+  }
 
-  init: function() {
+  init() {
     initializeHeader(this);
     initializeChat(this);
     initializeBanners(this);
@@ -36,29 +42,37 @@ const CyScript = Backbone.Model.extend({
     initializeVidResize(this);
 
     this.trigger('initialized');
-  },
+  }
 
-  getUsername: function() {
-    return CLIENT.name !== "" ? CLIENT.name : null;
-  },
-  getAfk: function() {
+  getClient(): any {
+    let client = (window as any).CLIENT;
+    return client;
+  }
+
+  getUsername() {
+    let client = this.getClient();
+    return client.name !== "" ? client.name : null;
+  }
+
+  getAfk() {
     let username = this.getUsername();
     if (username === null) {
       return null;
     }
     return $(`.userlist-${username}`).parent().hasClass('userlist_afk');
-  },
-  setAfk: function(afk) {
-   
+  }
+
+  setAfk(afk: boolean) {
     let isAfk = this.getAfk();
     if (isAfk === null) {
       return null;
     }
     if (afk !== isAfk) {
-      socket.emit('chatMsg', {msg: '/afk'});
+      (window as any).socket.emit('chatMsg', {msg: '/afk'});
     }
-  },
-  smartAfk: function(afk) {
+  }
+
+  smartAfk(afk: boolean) {
     let isAfk = this.getAfk();
     if (isAfk === null) {
       return;
@@ -74,8 +88,8 @@ const CyScript = Backbone.Model.extend({
         })
       }
     }
-  },
-});
+  }
+}
 
-window.CyScript = CyScript;
+(window as any).CyScript = CyScript;
 export default CyScript;
