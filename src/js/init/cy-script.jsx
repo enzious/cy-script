@@ -1,6 +1,6 @@
 import 'js/apps/cy-script';
 
 window.documentReady = null;
-$(document).ready(() => {
+document.addEventListener('DOMContentLoaded', function() {
   window.documentReady = true;
 });

@@ -5,8 +5,10 @@
 /*.sublime-project
 *.swp
 *.swo
-/package-lock.json
 /.vs
 .vscode/settings.json
 /deploy.sh
 /configs.json
+/src/js/configs/private/**
+!/src/js/configs/private/.preserve
+/configs.overlay.json

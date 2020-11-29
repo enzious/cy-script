@@ -1,8 +1,11 @@
 {
   "default": {
-    "publicPath": "http://localhost:8188/",
+    "publicPath": "http://localhost:8211/",
     "mode": "development",
-    "outputPath": "./build/release"
+    "outputPath": "./build/release",
+    "cyScriptConfigs": [
+      "./src/js/configs/public/example/index.tsx"
+    ]
   },
   "debug": {
   },
@@ -11,6 +14,6 @@
     "outputPath": "./build/release"
   },
   "dev-server": {
-    "publicPath": "http://localhost:8188/"
+    "publicPath": "http://localhost:8211/"
   }
 }

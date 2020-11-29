@@ -1,18 +1,27 @@
+const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const configs = require('./configs.json');
+
+var configsOverlay = {};
+
+try {
+  configsOverlay = JSON.parse(fs.readFileSync(path.resolve(__dirname, './configs.overlay.json')));
+} catch (err) { console.log('Could not find/load configs.overlay.json:', err.message) }
 
 module.exports = function(env) {
   env = env || {};
 
   env.profile = env.profile || 'debug';
 
+  const compiledConfigs = Object.assign({}, configs, configsOverlay);
+
   let modes = env.profile.split(',');
   var profile = {};
   ['default', ...modes].forEach((mode) => {
-    if (configs[mode]) {
-      Object.assign(profile, configs[mode])
+    if (compiledConfigs[mode]) {
+      Object.assign(profile, compiledConfigs[mode])
     }
   });
 
@@ -25,6 +34,9 @@ module.exports = function(env) {
   ];
   config.entry['cy-script-legacy'] = [
     // Put old cytube scripts here between _start and _end
+    './src/js/init/cy-script-config.ts',
+    ...profile.cyScriptConfigs,
+    './src/js/init/cy-script-config-set.ts',
     './src/js/legacy/_start.jsx',
     './src/js/legacy/ayy-sync.jsx',
     './src/js/legacy/bootstrap-dialog.js',
@@ -70,13 +82,14 @@ module.exports = function(env) {
         },
         {
           test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
-          loader: 'url-loader',
-          options: {
-            limit: 10000,
-            alias: {
-              //'../fonts/': ''
-            }
-          }
+          use: [{
+            loader: 'url-loader',
+            options: { 
+              limit: 10, // b 
+              emitFile: true,
+              publicPath: profile.publicPath
+            } 
+          }]
         },
         // For new scripts
         {
@@ -188,7 +201,7 @@ module.exports = function(env) {
     devtool: env.profile === 'debug' ? 'inline-source-map' : false,
     devServer: {
       contentBase: path.resolve('build/' + env.profile),
-      publicPath: '/',
+      publicPath: profile.publicPath,
       watchContentBase: true,
       historyApiFallback: {
         index: 'index.html'

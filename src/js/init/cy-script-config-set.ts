@@ -1,0 +1,1 @@
+cyScriptConfigs.setConfig((window as any).CHANNELNAME);

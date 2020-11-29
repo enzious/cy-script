@@ -136,10 +136,7 @@ let Header = Backbone.View.extend({
       },
     };
 
-    var headerLogo = associatedChannels[CHANNEL.name.toLowerCase()];
-    if (!headerLogo || !headerLogo.headerLogo) {
-      headerLogo = Object.entries(associatedChannels).find(() => true)[1];
-    }
+    var headerLogo = cyScriptConfigs.config?.roomInfo?.headerLogo;
 
     var channelList = $(
       <li id="ChannelList" class="dropdown">
@@ -150,8 +147,15 @@ let Header = Backbone.View.extend({
         <ul class="dropdown-menu"></ul>
       </li>
     );
-    channelList.insertAfter(homeButton).find("img").attr('src', headerLogo.headerLogo);
+    channelList.insertAfter(homeButton);
+
     homeButton.remove();
+    if (headerLogo) {
+      channelList.find("img").attr('src', headerLogo);
+    } else {
+      channelList.find('.dropdown-toggle')
+        .prepend(<span class="glyphicon glyphicon-home" style="margin: 0 1rem;"></span>);
+    }
 
     var channelBadge = channelList.find('.badge')
     channelList = channelList.find(".dropdown-menu");

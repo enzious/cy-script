@@ -7,6 +7,13 @@ import { initializePlaylist, } from 'js/gui/playlist';
 import { initializeVidResize, } from 'js/gui/video';
 import { initializePoll, } from 'js/gui/poll';
 
+interface Window {
+  cyScript: CyScript;
+  CyScript: any;
+}
+
+declare var cyScript: CyScript;
+
 class CyScript extends PlainComponent {
   options: any;
   logger: Logger;
@@ -49,12 +56,12 @@ class CyScript extends PlainComponent {
     return client;
   }
 
-  getUsername() {
+  getUsername(): string | null {
     let client = this.getClient();
     return client.name !== "" ? client.name : null;
   }
 
-  getAfk() {
+  getAfk(): boolean {
     let username = this.getUsername();
     if (username === null) {
       return null;
