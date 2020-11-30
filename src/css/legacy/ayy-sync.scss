@@ -4,7 +4,7 @@ $fw-chat-controls-button-border-width: 2;
 $fw-aux-controls-button-diameter: 28;
 $fw-aux-controls-button-border-width: 2;
 %controls-inactive {
-  opacity: .1;
+  opacity: 0.1;
   -webkit-transition: opacity 1s;
   -webkit-transition-delay: 500ms;
   transition: opacity 1s;
@@ -18,23 +18,21 @@ $fw-aux-controls-button-border-width: 2;
 
 // Bootstrap tweaks
 
-.navbar-fixed-top
-{
+.navbar-fixed-top {
   position: static;
   right: auto;
   left: auto;
 }
 
 #wrap > .navbar.navbar-inverse {
-  background: rgba(0, 0, 0, .3) !important;
+  background: rgba(0, 0, 0, 0.3) !important;
   border-top: 0 !important;
   border-right: 0 !important;
   border-left: 0 !important;
   border-radius: 0 !important;
 }
 
-.navbar.enhanced > .navbar
-{
+.navbar.enhanced > .navbar {
   background: none;
   margin-bottom: 0;
   border-bottom: 0;
@@ -43,70 +41,56 @@ $fw-aux-controls-button-border-width: 2;
   border-radius: 0;
   min-height: 30px;
   padding: 0 15px;
-  
+
   @media screen and (max-width: 768px) {
-    &.lower
-    {
+    &.lower {
       display: none !important;
     }
   }
 
-  & > ul > li > a
-  {
+  & > ul > li > a {
     padding-top: 5px;
     padding-bottom: 5px;
 
-    img.icon
-    {
+    img.icon {
       float: left;
       max-height: 18px;
     }
   }
 }
 
-.navbar-inverse .navbar-nav > li > a:focus
-{
-  background: rgba(255, 255, 255, .03);
+.navbar-inverse .navbar-nav > li > a:focus {
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .navbar-inverse .navbar-nav > li > a,
-.navbar-inverse .navbar-text
-{
+.navbar-inverse .navbar-text {
   font-size: 12px;
 }
-.dropdown-menu .divider
-{
+.dropdown-menu .divider {
   margin: 4px 0;
 }
-.dropdown-menu > li > a:hover
-{
-  background-color: #0091FF;
+.dropdown-menu > li > a:hover {
+  background-color: #0091ff;
 }
 
-.navbar-collapse.collapse.in
-{
+.navbar-collapse.collapse.in {
   width: 100%;
 }
 
-@media (min-width: 768px)
-{
-  .navbar-right
-  {
+@media (min-width: 768px) {
+  .navbar-right {
     margin-right: 0 !important;
 
-    li:last-child a
-    {
-      border-right: 1px solid rgba(0,0,0,0.3);
+    li:last-child a {
+      border-right: 1px solid rgba(0, 0, 0, 0.3);
     }
   }
 }
 
-@media (min-width: 768px)
-{
-  .profile-button
-  {
-    & > a
-    {
+@media (min-width: 768px) {
+  .profile-button {
+    & > a {
       vertical-align: middle;
       display: table-cell !important;
       padding-top: 0 !important;
@@ -116,36 +100,29 @@ $fw-aux-controls-button-border-width: 2;
   }
 }
 
-.navbar-collapse.collapse.in.profile-button > a
-{
+.navbar-collapse.collapse.in.profile-button > a {
   width: 100%;
 }
 
-.navbar-inverse .navbar-nav
-{
+.navbar-inverse .navbar-nav {
   & > .open > a,
   & > .open > a:focus,
-  & > .open > a:hover
-  {
-    background: #0091FF !important;
+  & > .open > a:hover {
+    background: #0091ff !important;
   }
 }
 
-#ChannelList .dropdown-menu
-{
-  li a
-  {
+#ChannelList .dropdown-menu {
+  li a {
     padding-left: 10px;
 
-    .badge
-    {
+    .badge {
       width: 36px;
     }
   }
 }
 
-.btn
-{
+.btn {
   border: 0;
 
   &.active.focus,
@@ -153,73 +130,64 @@ $fw-aux-controls-button-border-width: 2;
   &.focus,
   &:active.focus,
   &:active:focus,
-  &:focus
-  {
+  &:focus {
     outline: #66afe9 auto 1px !important;
   }
 }
-.form-control
-{
+.form-control {
   border-color: #656565;
 }
 
-.btn-purple
-{
+.btn-purple {
   border-color: transparent !important;
   background-repeat: repeat !important;
 }
 
-.display-none
-{
+.display-none {
   display: none;
 }
 
-.well, .btn
-{
+.well,
+.btn {
   border: 0;
 }
-#queue, div#plmeta
-{
+#queue,
+div#plmeta {
   border-width: 0 !important;
 }
 
-.navbar, .well, .form-group
-{
+.navbar,
+.well,
+.form-group {
   margin-bottom: 15px;
 }
 
 // === main ===
 
-#mainpage
-{
+#mainpage {
   padding-top: 0;
 }
 
-#main
-{
+#main {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
   padding-left: 15px;
 }
 
-#videowrap, #chatwrap
-{
+#videowrap,
+#chatwrap {
   padding-left: 0;
 }
 
-.fw-start .glyphicon
-{
+.fw-start .glyphicon {
   top: 0;
 }
 
 // === motd ===
 
-#motdrow
-{
-  & > div
-  {
-    #motdwrap
-    {
+#motdrow {
+  & > div {
+    #motdwrap {
       margin-bottom: 15px !important;
       padding: 10px 27px 10px 10px;
       font-size: 12px;
@@ -227,32 +195,26 @@ $fw-aux-controls-button-border-width: 2;
       margin-right: -10px;
       margin-left: -10px;
 
-      .close
-      {
+      .close {
         right: 12px;
         top: -11px;
       }
     }
-  }  
+  }
 }
 
-.modal-body #motdrow>div #motdwrap
-{
+.modal-body #motdrow > div #motdwrap {
   margin-bottom: -10px !important;
   padding: 10px;
 
-  #togglemotd
-  {
+  #togglemotd {
     display: none;
   }
 }
 
-body.fw #motdrow
-{
-  & > div
-  {
-    #motdwrap
-    {
+body.fw #motdrow {
+  & > div {
+    #motdwrap {
       margin-top: 0;
       margin-right: 0;
       margin-left: 0;
@@ -262,19 +224,16 @@ body.fw #motdrow
 
 // === videowrap ===
 
-#videowrap
-{
+#videowrap {
   margin-right: 0;
   padding-right: 15px;
   margin-bottom: 15px !important;
   bottom: 0 !important;
 }
 
-body.fw
-{
+body.fw {
   #videowrap #videowrap-header,
-  #main
-  {
+  #main {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
     padding-left: 0;
@@ -282,14 +241,12 @@ body.fw
 
   #videowrap #videowrap-header,
   #resize-video-smaller,
-  #resize-video-larger
-  {
+  #resize-video-larger {
     display: none;
   }
 }
 
-#videowrap-header
-{
+#videowrap-header {
   position: relative !important;
   display: block;
   margin-top: 0 !important;
@@ -300,8 +257,7 @@ body.fw
   overflow: visible !important;
 }
 
-#currenttitle
-{
+#currenttitle {
   //position: absolute !important;
   padding-top: 0 !important;
   height: 24px !important;
@@ -317,8 +273,7 @@ body.fw
   overflow: visible;
 }
 
-#currentblame
-{
+#currentblame {
   //position: absolute;
   //top: 0;
   //right: 0;
@@ -327,60 +282,50 @@ body.fw
 }
 
 #resize-video-smaller,
-#resize-video-larger
-{
+#resize-video-larger {
   margin: 3px 3px 0 0;
 }
 
 // killScreen
 
-.killScreen
-{
+.killScreen {
   width: 100%;
   height: 100%;
   background: transparent;
   text-align: center;
   font-size: 24px;
-  color: #62C462;
+  color: #62c462;
   font-weight: bold;
   text-shadow: 0 0 3px #000000;
 }
 
 // Allow Prompt
 
-div.profile-box
-{
+div.profile-box {
   border: 0;
-  #chanjs-allow-prompt
-  {
-    #chanjs-allow-prompt-buttons
-    {
-      #chanjs-allow
-      {
+  #chanjs-allow-prompt {
+    #chanjs-allow-prompt-buttons {
+      #chanjs-allow {
         float: left;
         width: 100%;
         margin-bottom: 2px;
         font-weight: bold;
         font-size: 17px;
       }
-      #chanjs-deny
-      {
+      #chanjs-deny {
         clear: left;
         width: 100%;
       }
     }
 
-    & > .checkbox
-    {
+    & > .checkbox {
       margin-bottom: 0;
-      label
-      {
+      label {
         padding-left: 26px;
         font-size: 12px;
         line-height: 12px;
       }
-      input
-      {
+      input {
         margin-left: -22px;
       }
     }
@@ -389,8 +334,7 @@ div.profile-box
 
 // === chatwrap ===
 
-#chatwrap
-{
+#chatwrap {
   position: relative;
   overflow: visible !important;
   overflow-y: visible !important;
@@ -398,8 +342,7 @@ div.profile-box
   margin-bottom: 15px !important;
   padding-right: 15px;
 }
-#chatheader
-{
+#chatheader {
   overflow: hidden;
   padding-top: 2px;
   padding-bottom: 0;
@@ -408,74 +351,62 @@ div.profile-box
   min-height: 24px;
   height: auto !important;
 }
-#chatheader .label
-{
+#chatheader .label {
   line-height: inherit;
   margin-top: 0;
   margin-bottom: 2px;
   height: 20px;
 }
-#userlisttoggle
-{
+#userlisttoggle {
   height: 100% !important;
   margin-left: 3px;
   margin-right: 3px;
 }
-#usercount
-{
+#usercount {
   display: inline-block;
   height: 20px;
   margin-bottom: 2px;
   line-height: 20px;
   padding-left: 2px;
 }
-#afkCount
-{
+#afkCount {
   position: static !important;
   line-height: 20px;
   margin-bottom: 2px;
 }
-#chatheader 
-{
-  & > div
-  {
+#chatheader {
+  & > div {
     padding: 0 2px;
   }
-  .afkusercount
-  {
+  .afkusercount {
     display: none;
     line-height: 20px;
   }
-  .activeusercount
-  {
+  .activeusercount {
     display: inline-block;
     border-right: 0;
     line-height: 20px;
   }
 }
 
-.ChatOptions > .dropdown-menu > li > a > i.fa:first-child
-{
+.ChatOptions > .dropdown-menu > li > a > i.fa:first-child {
   display: inline-block;
   margin-left: -10px;
   width: 24px;
   text-align: center;
 }
 
-#userlist
-{
+#userlist {
   border-bottom: 0;
   border-right: 0;
 }
 
-#messagebuffer
-{
+#messagebuffer {
   position: relative;
   border-bottom: 0;
 }
 
-#newmessages-indicator
-{
+#newmessages-indicator {
   position: absolute;
   top: auto;
   right: 0px;
@@ -485,52 +416,44 @@ div.profile-box
   position: absolute !important;
   padding-left: 119px;
 }
-body.fw #newmessages-indicator
-{
+body.fw #newmessages-indicator {
   padding-right: 0;
   bottom: 0px;
 }
-#newmessages-indicator-bghack
-{
+#newmessages-indicator-bghack {
   padding: 4px 0;
   border-radius: 3px;
   opacity: 0.9;
 }
 
-#messagebuffer > div strong .user-link
-{
+#messagebuffer > div strong .user-link {
   cursor: pointer;
 
-  &:hover
-  {
+  &:hover {
     text-decoration: underline;
   }
 }
 
 #chatline,
-#chatinput input
-{
+#chatinput input {
   border-radius: 0;
-  border-color: #3A3F44;
+  border-color: #3a3f44;
 
-  &:focus
-  {
+  &:focus {
     outline: none;
     -webkit-box-shadow: none;
     box-shadow: none;
-    border: 1px solid #66AFE9 !important;
+    border: 1px solid #66afe9 !important;
   }
 }
 
 // === controlsrow ===
 
-#emote_suggest
-{
+#emote_suggest {
   display: none;
   margin-bottom: 0;
 
-  &.well
-  {
+  &.well {
     position: absolute;
     left: 0;
     top: 100%;
@@ -541,20 +464,17 @@ body.fw #newmessages-indicator
   }
 }
 
-#controlsrow
-{
+#controlsrow {
   padding-left: 15px;
   margin-top: 0;
 
-  & > div
-  {
+  & > div {
     padding-left: 0;
     padding-top: 0 !important;
     bottom: 0 !important;
 
     & > button,
-    & > div
-    {
+    & > div {
       margin-bottom: 15px;
     }
   }
@@ -562,131 +482,107 @@ body.fw #newmessages-indicator
 
 // === lower leftpane ===
 
-#leftpane-inner
-{
+#leftpane-inner {
   padding-right: 10px;
 }
 
-#pollwrap
-{
+#pollwrap {
   padding-right: 0;
   margin-bottom: 15px;
 
-  & > div
-  {
+  & > div {
     margin-top: 0;
     margin-right: 5px;
     margin-bottom: 15px;
 
-    &:last-child
-    {
+    &:last-child {
       margin-top: 0;
       margin-bottom: 0;
     }
-    & > .close.pull-right
-    {
+    & > .close.pull-right {
       margin-top: -14px;
       margin-right: -9px;
       margin-left: 8px;
     }
-    & > .btn.pull-right
-    {
+    & > .btn.pull-right {
       margin-top: -15px;
       margin-left: 2px;
-      &:first-child
-      {
+      &:first-child {
         margin-right: -16px;
       }
     }
-    .label.label-default.pull-right
-    {
+    .label.label-default.pull-right {
       margin-right: -16px;
     }
 
-    h3
-    {
+    h3 {
       font-size: 20px;
     }
   }
-  &.col-lg-12.col-md-12
-  {
+  &.col-lg-12.col-md-12 {
     min-height: 158px !important;
     background-position: center 13px !important;
   }
-  & .btn.btn-sm.pull-right
-  {
+  & .btn.btn-sm.pull-right {
     margin-left: 2px;
   }
 }
 
 // === lower rightpane ===
 
-#rightpane-inner
-{
+#rightpane-inner {
   margin-bottom: 15px;
 }
 
-#playlistrow
-{
+#playlistrow {
   bottom: 0 !important;
   padding-left: 15px;
 
-  & > div
-  {
+  & > div {
     padding-right: 15px;
     padding-left: 0;
     margin-bottom: 0;
   }
 }
 
-.videolist > li
-{
+.videolist > li {
   border-bottom: 0;
 
-  &:first-child
-  {
+  &:first-child {
     border-top-width: 0;
   }
 }
 
 .plcontrol-collapse > .vertical-spacer:first-child,
-#queuefail > .vertical-spacer:first-child
-{
+#queuefail > .vertical-spacer:first-child {
   display: none;
 }
 
-#library
-{
+#library {
   margin-bottom: 0;
 }
 
-#recentmedia-list
-{
+#recentmedia-list {
   margin-bottom: 15px;
   border: 1px solid #000000;
 
-  li
-  {
+  li {
     border-top: 0px;
     border-left: 1px solid #000000;
 
-    &:nth-child(even)
-    {
-      background: rgba(255, 255, 255, .04);
+    &:nth-child(even) {
+      background: rgba(255, 255, 255, 0.04);
     }
-    &:last-child
-    {
+    &:last-child {
       border-bottom: 0px;
     }
   }
 }
 
-#playlistmanagerwrap
-{
+#playlistmanagerwrap {
   margin-top: 0;
 
-  &:last-child
-  {
+  &:last-child {
     margin-bottom: 0;
   }
 }
@@ -694,26 +590,21 @@ body.fw #newmessages-indicator
 /* full windowing shit */
 
 .embed-responsive,
-.embed-responsive-item
-{
+.embed-responsive-item {
   clear: both;
 }
 
-body.fw 
-{
-  .fw-showOn
-  {
+body.fw {
+  .fw-showOn {
     display: block;
   }
 
-  .navbar.upper
-  {
+  .navbar.upper {
     position: static;
     margin-top: 100vh;
   }
 
-  #videowrap
-  {
+  #videowrap {
     overflow: hidden;
     padding-left: 0;
     padding-right: 0;
@@ -722,169 +613,139 @@ body.fw
     width: 100%;
     height: 100vh;
     padding-bottom: 0;
-    #currenttitle
-    {
+    #currenttitle {
       display: none;
     }
   }
 
-  .embed-responsive
-  {
+  .embed-responsive {
     position: relative;
     height: 100vh;
     border: 0;
     padding-bottom: 0;
   }
 
-  .embed-responsive-item
-  {
+  .embed-responsive-item {
     width: 100%;
     height: 100vh;
 
-    iframe
-    {
+    iframe {
       position: static;
     }
 
-    .vjs-tech
-    {
+    .vjs-tech {
       position: static;
     }
   }
 
-  #chatwrap
-  {
-    background-color: rgba(0, 0, 0, .6) !important;
+  #chatwrap {
+    background-color: rgba(0, 0, 0, 0.6) !important;
   }
 
-  #messagebuffer
-  {
+  #messagebuffer {
     margin-bottom: 10px;
     border: 0;
   }
 
-  &.fw-chat-open
-  {
+  &.fw-chat-open {
     /*
     .embed-responsive .videochatContainer
     {
       opacity: 0;
     }
     */
-    .embed-responsive-item
-    {
+    .embed-responsive-item {
       padding-left: 498px;
     }
   }
 
-  &.fw-overlay.fw-chat-open
-  {
-    .embed-responsive-item
-    {
+  &.fw-overlay.fw-chat-open {
+    .embed-responsive-item {
       padding-left: 0;
     }
   }
 
-  &.fw-chat-right
-  {
-    &.fw-chat-open
-    {
-      .embed-responsive-item
-      {
+  &.fw-chat-right {
+    &.fw-chat-open {
+      .embed-responsive-item {
         padding-left: 0;
         padding-right: 498px;
       }
     }
 
-    &.fw-overlay.fw-chat-open
-    {
-      .embed-responsive-item
-      {
+    &.fw-overlay.fw-chat-open {
+      .embed-responsive-item {
         padding-right: 0;
       }
     }
   }
 }
 
-
-body.fw
-{
-  #emote_suggest.well
-  {
+body.fw {
+  #emote_suggest.well {
     left: 100%;
     top: auto;
     bottom: 0;
   }
-  &.fw-chat-open #emote_suggest.well
-  {
+  &.fw-chat-open #emote_suggest.well {
     left: 0;
   }
 }
 
 // === fw chatline/guestline ===
 
-body.fw
-{
+body.fw {
   #guestlogin,
-  #chatline
-  {
+  #chatline {
     position: absolute;
     bottom: 45px;
     left: 0;
     right: auto;
     z-index: 990;
     width: 500px;
-    opacity: .25;
+    opacity: 0.25;
     border-width: 2px;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 
-    &:focus
-    {
+    &:focus {
       border-color: #66afe9;
     }
   }
 
-  &.fw-chat-open
-  {
+  &.fw-chat-open {
     #guestlogin,
-    #chatline
-    {
+    #chatline {
       position: absolute;
       bottom: 0;
       opacity: 1;
-      background: rgba(0, 0, 0, .67) !important;
-      border-color: rgba(222,222,222,0.5);
+      background: rgba(0, 0, 0, 0.67) !important;
+      border-color: rgba(222, 222, 222, 0.5);
 
       border-top-left-radius: 0;
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
 
-      &:focus
-      {
+      &:focus {
         border-color: #66afe9;
       }
     }
   }
 
-  &.fw-overlay
-  {
+  &.fw-overlay {
     #guestlogin,
-    #chatline
-    {
+    #chatline {
       position: absolute;
       bottom: 45px;
     }
   }
 
-  &.fw-overlay.fw-chat-open
-  {
+  &.fw-overlay.fw-chat-open {
     #guestlogin,
-    #chatline
-    {
+    #chatline {
       bottom: 45px;
 
       border-top-right-radius: 0;
@@ -893,11 +754,9 @@ body.fw
     }
   }
 
-  &.fw-chat-right
-  {
+  &.fw-chat-right {
     #guestlogin,
-    #chatline
-    {
+    #chatline {
       right: 0;
       left: auto;
       border-top-left-radius: 4px;
@@ -906,11 +765,9 @@ body.fw
       border-bottom-right-radius: 0;
     }
 
-    &.fw-chat-open
-    {
+    &.fw-chat-open {
       #guestlogin,
-      #chatline
-      {
+      #chatline {
         border-top-left-radius: 0;
         border-top-right-radius: 0;
         border-bottom-left-radius: 0;
@@ -918,48 +775,38 @@ body.fw
       }
     }
 
-    &.fw-overlay.fw-chat-open
-    {
+    &.fw-overlay.fw-chat-open {
       #guestlogin,
-      #chatline
-      {
+      #chatline {
         border-bottom-left-radius: 4px;
       }
     }
   }
 
-  #guestlogin 
-  {
-    #guestname
-    {
+  #guestlogin {
+    #guestname {
       border-top-right-radius: 4px;
       border-bottom-right-radius: 4px;
     }
 
-    span.input-group-addon
-    {
+    span.input-group-addon {
       border-bottom-left-radius: 0px;
     }
   }
-  #chatline:focus
-  {
+  #chatline:focus {
     opacity: 1;
   }
 
-  #controlsrow
-  {
+  #controlsrow {
     margin-left: 0px;
     margin-right: 0px;
   }
-
 }
 
 // === left-floating panel ===
 
-body.fw
-{
-  .fw-chat-panel
-  {
+body.fw {
+  .fw-chat-panel {
     box-sizing: border-box;
     position: absolute;
     left: -500px;
@@ -967,22 +814,20 @@ body.fw
     bottom: 83px;
     width: 500px;
     z-index: 999;
-    border-top: #{$fw-chat-panel-border-width}px solid rgba(222, 222, 222, .5);
-    border-right: #{$fw-chat-panel-border-width}px solid rgba(222, 222, 222, .5);
-    border-bottom: 0;//#{$fw-chat-panel-border-width}px solid rgba(222, 222, 222, .5);
+    border-top: #{$fw-chat-panel-border-width}px solid rgba(222, 222, 222, 0.5);
+    border-right: #{$fw-chat-panel-border-width}px solid rgba(222, 222, 222, 0.5);
+    border-bottom: 0; //#{$fw-chat-panel-border-width}px solid rgba(222, 222, 222, .5);
     border-radius: 0 3px 3px 0;
     bottom: 83px;
 
-    .inner
-    {
+    .inner {
       box-sizing: border-box;
       width: 100%;
       //height: 100%;
-      background: rgba(0, 0, 0, .67);
+      background: rgba(0, 0, 0, 0.67);
     }
 
-    #chatwrap
-    {
+    #chatwrap {
       width: 100%;
       padding-left: 0;
       padding-right: 0;
@@ -992,10 +837,8 @@ body.fw
     }
   }
 
-  &.fw-chat-open
-  {
-    .fw-chat-panel
-    {
+  &.fw-chat-open {
+    .fw-chat-panel {
       bottom: 38px;
       left: 0;
       top: 0;
@@ -1004,86 +847,71 @@ body.fw
     }
   }
 
-  &.fw-overlay.fw-chat-open
-  {
-    .fw-chat-panel
-    {
+  &.fw-overlay.fw-chat-open {
+    .fw-chat-panel {
       bottom: 83px;
     }
   }
 
-  #chatwrap
-  {
-    #chatheader
-    {
+  #chatwrap {
+    #chatheader {
       height: 20px;
       border: 0;
 
-      .label
-      {
+      .label {
         line-height: 13px;
       }
     }
-    #userlist
-    {
+    #userlist {
       //height: 100% !important;
       border: 0;
     }
-    #messagebuffer
-    {
+    #messagebuffer {
       margin-bottom: 0;
       //height: 100% !important;
     }
   }
 
-  &.fw-chat-right
-  {
-    .fw-chat-panel
-    {
+  &.fw-chat-right {
+    .fw-chat-panel {
       border-right: 0;
-      border-left: #{$fw-chat-panel-border-width}px solid rgba(222, 222, 222, .5);
+      border-left: #{$fw-chat-panel-border-width}px solid rgba(222, 222, 222, 0.5);
     }
-    
-    &.fw-chat-open
-    {
-      .fw-chat-panel
-      {
+
+    &.fw-chat-open {
+      .fw-chat-panel {
         left: auto;
         right: 0;
         border-top: 0px;
       }
     }
   }
-
 }
 
 // === left-floating controls ===
 
-.fw-chat-controls
-{
+.fw-chat-controls {
   display: none;
   position: absolute;
   left: 0;
   top: 30%;
   z-index: 999;
   padding: 2px;
-  background: rgba(222, 222, 222, .5);
+  background: rgba(222, 222, 222, 0.5);
   border-radius: 0 3px 3px 0;
   @extend %controls-inactive;
-  
-  &:hover
-  {
+
+  &:hover {
     @extend %controls-active;
   }
 
-  .button
-  {
+  .button {
     position: relative;
     box-sizing: border-box;
     display: block;
     width: #{$fw-chat-controls-button-diameter}px;
     height: #{$fw-chat-controls-button-diameter}px;
-    color: rgba(22, 22, 22, .7);
+    color: rgba(22, 22, 22, 0.7);
     background: none;
     text-align: center;
     line-height: #{$fw-chat-controls-button-diameter + 1}px;
@@ -1091,8 +919,7 @@ body.fw
     cursor: pointer;
     border-radius: #{$fw-chat-controls-button-diameter / 2}px;
 
-    .button-label
-    {
+    .button-label {
       display: none;
       position: absolute;
       top: 0;
@@ -1102,50 +929,41 @@ body.fw
       background: #121212;
       border-radius: 3px;
       line-height: #{$fw-chat-controls-button-diameter}px;
-      font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
       padding: 0 6px;
-      color: #FFFFFF;
+      color: #ffffff;
       font-size: 14px;
     }
   }
 }
 
-body.fw
-{
-  .fw-chat-controls
-  {
+body.fw {
+  .fw-chat-controls {
     display: block;
   }
 
-  &.fw-chat-open
-  {
-    .fw-chat-controls
-    {
+  &.fw-chat-open {
+    .fw-chat-controls {
       left: 500px;
       padding: 2px 2px 2px 0;
     }
   }
 
-  &.fw-chat-right
-  {
-    .fw-chat-controls
-    {
+  &.fw-chat-right {
+    .fw-chat-controls {
       left: auto;
       right: 0;
       padding: 2px;
       border-radius: 3px 0 0 3px;
     }
 
-    &.fw-chat-open
-    {
-      .fw-chat-controls
-      {
+    &.fw-chat-open {
+      .fw-chat-controls {
         left: auto;
         right: 500px;
         padding: 2px 0 2px 2px;
 
-        .button .button-label
-        {
+        .button .button-label {
           right: #{$fw-aux-controls-button-diameter + 5}px;
           left: auto;
           height: #{$fw-chat-controls-button-diameter}px;
@@ -1159,9 +977,8 @@ body.fw
 body.fw-chat-open .fw-chat-controls .button.chat,
 body.nnd .fw-chat-controls .button.nnd-toggle,
 body.fw-overlay .fw-chat-controls .button.fw-overlay-toggle,
-.fw-aux-controls .button.selected
-{
-  border: 2px solid rgba(22, 22, 22, .7);
+.fw-aux-controls .button.selected {
+  border: 2px solid rgba(22, 22, 22, 0.7);
   line-height: #{$fw-chat-controls-button-diameter - 3}px;
   background: transparent;
 }
@@ -1170,52 +987,44 @@ body.fw-overlay .fw-chat-controls .button.fw-overlay-toggle,
 body.fw-chat-open .fw-chat-controls .button.chat:hover,
 body.nnd .fw-chat-controls .button.nnd-toggle:hover,
 body.fw-overlay .fw-chat-controls .button.fw-overlay-toggle:hover,
-.fw-aux-controls .button.selected:hover
-{
+.fw-aux-controls .button.selected:hover {
   border: 0;
   line-height: #{$fw-chat-controls-button-diameter + 1}px;
   text-decoration: none;
   background: #121212;
-  color: #FFFFFF;
+  color: #ffffff;
   text-shadow: none;
   box-shadow: none;
 }
 
-.fw-aux-controls
-{
+.fw-aux-controls {
   display: none;
   position: fixed;
   right: 0;
   top: 30%;
   z-index: 999;
   padding: 2px;
-  background: rgba(222, 222, 222, .5);
+  background: rgba(222, 222, 222, 0.5);
   border-radius: 3px 0 0 3px;
   @extend %controls-inactive;
-  &:hover
-  {
-     @extend %controls-active;
+  &:hover {
+    @extend %controls-active;
   }
 }
 
-body.fw
-{
-  .fw-aux-controls
-  {
+body.fw {
+  .fw-aux-controls {
     display: block;
   }
 
-  &.fw-chat-right
-  {
-    .fw-aux-controls
-    {
+  &.fw-chat-right {
+    .fw-aux-controls {
       left: 0;
       right: auto;
       padding: 2px;
       border-radius: 0 3px 3px 0;
 
-      .button .button-label
-      {
+      .button .button-label {
         left: #{$fw-aux-controls-button-diameter + 5}px;
         right: auto;
         height: #{$fw-chat-controls-button-diameter}px;
@@ -1224,14 +1033,13 @@ body.fw
   }
 }
 
-.fw-aux-controls .button
-{
+.fw-aux-controls .button {
   position: relative;
   box-sizing: border-box;
   display: block;
   width: #{$fw-chat-controls-button-diameter}px;
   height: #{$fw-chat-controls-button-diameter}px;
-  color: rgba(22, 22, 22, .7);
+  color: rgba(22, 22, 22, 0.7);
   background: none;
   text-align: center;
   line-height: #{$fw-chat-controls-button-diameter + 1}px;
@@ -1239,8 +1047,7 @@ body.fw
   cursor: pointer;
   border-radius: #{$fw-chat-controls-button-diameter / 2}px;
 
-  .button-label
-  {
+  .button-label {
     display: none;
     position: absolute;
     top: 0;
@@ -1250,38 +1057,32 @@ body.fw
     background: #121212;
     border-radius: 3px;
     line-height: #{$fw-chat-controls-button-diameter}px;
-    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     padding: 0 6px;
-    color: #FFFFFF;
+    color: #ffffff;
     font-size: 14px;
   }
 
-  &:hover
-  {
+  &:hover {
     border: 0;
     text-decoration: none;
     background: #121212;
-    color: #FFFFFF;
+    color: #ffffff;
     text-shadow: none;
     box-shadow: none;
   }
 }
 
 .fw-chat-controls .button:hover,
-.fw-aux-controls .button:hover
-{
-  .button-label
-  {
+.fw-aux-controls .button:hover {
+  .button-label {
     display: block;
   }
 }
-@media screen and (max-width: 700px)
-{
+@media screen and (max-width: 700px) {
   body.fw.fw-chat-open .fw-chat-controls .button,
-  body.fw.fw-chat-open .fw-aux-controls .button
-  {
-    &:hover .button-label
-    {
+  body.fw.fw-chat-open .fw-aux-controls .button {
+    &:hover .button-label {
       display: none;
     }
   }
@@ -1291,6 +1092,22 @@ body.small-emotes .channel-emote {
   max-height: 24px !important;
 }
 
-.xhc { position: relative;user-select: none; pointer-events: none; }
-.emote-xmashat { position: absolute;max-width: 46px;top: -30px;left: -13px;opacity: 0.85; user-select: none; pointer-events: none;}
-body.small-emotes .emote-xmashat { max-width: 16px !important; top: -8px !important; left: -5px !important; }
+.xhc {
+  position: relative;
+  user-select: none;
+  pointer-events: none;
+}
+.emote-xmashat {
+  position: absolute;
+  max-width: 46px;
+  top: -30px;
+  left: -13px;
+  opacity: 0.85;
+  user-select: none;
+  pointer-events: none;
+}
+body.small-emotes .emote-xmashat {
+  max-width: 16px !important;
+  top: -8px !important;
+  left: -5px !important;
+}

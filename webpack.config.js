@@ -30,32 +30,27 @@ module.exports = function(env) {
   var config = { entry: {} };
 
   config.entry['cy-script'] = [
-    './src/js/index.ts',
-  ];
-  config.entry['cy-script-legacy'] = [
-    // Put old cytube scripts here between _start and _end
+    'core-js/stable',
+    'regenerator-runtime/runtime',
     './src/js/init/cy-script-config.ts',
     ...profile.cyScriptConfigs,
     './src/js/init/cy-script-config-set.ts',
-    './src/js/legacy/_start.jsx',
-    './src/js/legacy/ayy-sync.jsx',
-    './src/js/legacy/bootstrap-dialog.js',
-    './src/js/legacy/external_extended_tab_complete.js',
-    './src/js/legacy/external_privmsg.js',
-    './src/js/legacy/external_userlist_overrides.jsx',
-    './src/js/legacy/chat-scroll.js',
-    './src/js/legacy/_end.js'
+    './src/js/index.ts',
   ];
+  // config.entry['cy-script-chanjs'] = [
+  // ];
 
   var indexCss = 'cy-script.css';
 
   return Object.assign(config, {
     mode: profile.mode,
     output: {
-      publicPath: env.publicPath,
+      publicPath: profile.publicPath,
       path: path.resolve(__dirname, './build/' + env.profile),
       filename: '[name].js',
-      sourceMapFilename: '[name].js.map'
+      sourceMapFilename: '[name].js.map',
+      chunkFilename: '[id].[hash].js',
+      crossOriginLoading: 'anonymous',
     },
     module: {
       rules: [
@@ -207,6 +202,7 @@ module.exports = function(env) {
         index: 'index.html'
       },
       host: '0.0.0.0',
+      sockHost: 'localhost',
       port: 8211,
       disableHostCheck: true,
       headers: {

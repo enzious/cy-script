@@ -2,13 +2,12 @@
   "default": {
     "publicPath": "http://localhost:8211/",
     "mode": "development",
-    "outputPath": "./build/release",
+    "outputPath": "./build/debug",
     "cyScriptConfigs": [
       "./src/js/configs/public/example/index.tsx"
     ]
   },
-  "debug": {
-  },
+  "debug": {},
   "release": {
     "mode": "production",
     "outputPath": "./build/release"

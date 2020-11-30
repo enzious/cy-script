@@ -1,6 +1,4 @@
-import steamIcon from 'img/steam-icon.png';
 const uuidv5 = require('uuid/v5');
-
 
 let Header = Backbone.View.extend({
 
@@ -51,7 +49,24 @@ let Header = Backbone.View.extend({
     //   </a>
     // </li>
 
-    this.lowerNavLeft.find('.steamIcon .icon').attr('src', steamIcon);
+    (cyScriptConfigs.config?.headerLinks || []).forEach(({ href, icon, text }) => {
+      const el = Object.assign(
+        document.createElement('li'),
+        {
+          innerHTML: (
+            <a href={href} target="_blank">
+              {
+                icon
+                  ? <img className="icon" src={icon} />
+                  : ''
+              }
+              &nbsp;{text}
+            </a>
+          ),
+        },
+      );
+      this.lowerNavLeft[0].appendChild(el);
+    });
 
     $(
       <li>
@@ -74,7 +89,7 @@ let Header = Backbone.View.extend({
       ]);
     });
 
-    var headerButtons = {};
+    var headerButtons: any = {};
     this.upperNavLeft.children().each(function(i, e) {
       var text = $($(e).find('a')[0]);
       if (text.length > 0) {
@@ -128,15 +143,25 @@ let Header = Backbone.View.extend({
     var homeButton = $($(".navbar .navbar-nav li")[0]);
     homeButton.find("a").html('<span class="glyphicon glyphicon-home"></span>');
 
-    var associatedChannels = {
-      'channelname': {
-        label: 'channel',
-        headerLogo: '',
-        id: 'channel'
-      },
-    };
+    // var associatedChannels = {
+    //   'channelname': {
+    //     label: 'channel',
+    //     headerLogo: '',
+    //     id: 'channel'
+    //   },
+    // };
 
-    var headerLogo = cyScriptConfigs.config?.roomInfo?.headerLogo;
+    const associatedChannels = [
+      ...(cyScriptConfigs.config?.roomInfo?.roomId ? [cyScriptConfigs.config?.roomInfo?.roomId] : []),
+      ...(cyScriptConfigs.config?.otherRooms || [])
+    ]
+      .filter(roomId => roomId !== null)
+      .map((roomId) => {
+        return cyScriptConfigs.configs.get(roomId)?.roomInfo
+      })
+      .filter(roomInfo => roomInfo !== null)
+
+    var headerLogo = cyScriptConfigs.config?.headerLogo;
 
     var channelList = $(
       <li id="ChannelList" class="dropdown">
@@ -154,20 +179,30 @@ let Header = Backbone.View.extend({
       channelList.find("img").attr('src', headerLogo);
     } else {
       channelList.find('.dropdown-toggle')
-        .prepend(<span class="glyphicon glyphicon-home" style="margin: 0 1rem;"></span>);
+        .prepend(
+          <span style="font-size: 18px; padding: 0 .5rem; vertical-align: middle;">
+            {
+              cyScriptConfigs.config?.roomInfo?.roomTitle
+                ? cyScriptConfigs.config?.roomInfo?.roomTitle
+                : CHANNEL.name
+            }
+          </span>
+        );
     }
 
     var channelBadge = channelList.find('.badge')
     channelList = channelList.find(".dropdown-menu");
-    Object.keys(associatedChannels).forEach(function(e) {
+    associatedChannels.forEach(({ roomId, roomTitle }) => {
       var channel = $(
-        <li className={`channel-${e}`}><a></a></li>
+        <li className={`channel-${roomId}`}><a></a></li>
       ).appendTo(channelList);
       $(channel.find('a'))
-        .attr('href', 'https://cytu.be/r/' + associatedChannels[e].id)
-        .html(associatedChannels[e].label + ' (../r/' + associatedChannels[e].id + ')');
+        .attr('href', 'https://cytu.be/r/' + roomId)
+        .html(roomTitle + ' (../r/' + roomId + ')');
     });
-    $(<li class="divider"></li>).appendTo(channelList);
+    if (associatedChannels.length) {
+      $(<li class="divider"></li>).appendTo(channelList);
+    }
     $(
         <li>
             <a href="https://cytu.be/">
@@ -260,7 +295,7 @@ let Header = Backbone.View.extend({
     const storageId = localStorage.getItem(`${CHANNEL.name}_currentMotd`);
 
     if (storageId !== motdId) {
-      localStorage.setItem('autoMotdClose', false);
+      localStorage.setItem('autoMotdClose', 'false');
     }
 
     if (newMotd.length === 0 && JSON.parse(localStorage.getItem('autoMotdClose')) === false) {
@@ -277,14 +312,14 @@ let Header = Backbone.View.extend({
     }
 
     newMotd.find('a').each((i, e) => {
-      e = $(e);
-      if (e.attr('target') === undefined) {
-        e.attr('target', '_blank');
+      const je = $(e);
+      if (je.attr('target') === undefined) {
+        je.attr('target', '_blank');
       }
     });
     closeBtn.insertBefore($("#new-motd > p"));
     closeBtn.on('click', () => {
-      localStorage.setItem('autoMotdClose', true);
+      localStorage.setItem('autoMotdClose', 'true');
       this.removeMotd();
     })
   },

@@ -11,10 +11,8 @@ Put either the files from `build/debug` or `build/release` into the channel's se
 
 ## CHANNEL.js
 ```javascript
-$.getScript('<publicPath>/cy-script.js', function ()
-{
+$.getScript('<publicPath>/cy-script.js', function () {
   new CyScript();
-  $.getScript('<publicPath>/cy-script-legacy.js');
 });
 ```
 

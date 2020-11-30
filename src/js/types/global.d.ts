@@ -5,6 +5,20 @@ namespace JSX {
   }
 }
 
+interface Window {
+  PAGETITLE: string;
+  socket: any;
+  BootstrapDialog: any;
+}
+
+interface CHANNEL {
+  name: string;
+}
+
+interface CLIENT {
+  name: string;
+}
+
 interface JQuery {
   routerLink(): JQuery;
   inject(...args): any;
@@ -12,3 +26,7 @@ interface JQuery {
 }
 
 declare var Backbone: Backbone;
+declare var BootstrapDialog: any;
+declare var CHANNEL: CHANNEL;
+declare var CLIENT: CLIENT;
+declare var findUserlistItem: function (string): any;

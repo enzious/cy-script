@@ -20,12 +20,20 @@ class CyScriptConfigs {
 interface RoomInfo {
   roomId: string | null;
   roomTitle?: string | null;
-  headerLogo?: string | null;
+}
+
+interface HeaderLink {
+  href: string;
+  icon?: string | null;
+  text?: string | null;
 }
 
 interface CyScriptConfig {
   roomInfo: RoomInfo;
+  headerLogo?: string | null;
+  banners?: string[];
   otherRooms?: string[];
+  headerLinks?: HeaderLink[];
 }
 
 window.cyScriptConfigs = new CyScriptConfigs();

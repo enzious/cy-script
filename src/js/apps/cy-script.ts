@@ -15,35 +15,29 @@ interface Window {
 declare var cyScript: CyScript;
 
 class CyScript extends PlainComponent {
-  options: any;
+  options: any = {
+    development: false,
+  };
   logger: Logger;
   smartAfkActive: boolean = false;
 
   constructor(options: any) {
     super();
-    this.options = Object.assign({
-    }, options || {});
+    this.options = Object.assign({}, options || {});
 
     (window as any).cyScript = this;
 
     this.logger = new Logger();
 
-    this.on('legacy-loaded', () => {
-      let init = () => {
-        this.init();
-      }
-      if ((window as any).documentReady) {
-        init();
-      } else {
-        $(() => init());
-      }
-    });
+    this.init();
   }
 
-  init() {
+  async init() {
+    await import('js/legacy');
+
     initializeHeader(this);
     initializeChat(this);
-    initializeBanners(this);
+    initializeBanners();
     initializePlaylist(this);
     initializePoll(this);
     initializeVidResize(this);
