@@ -223,9 +223,9 @@ if (!window[CHANNEL.name]) window[CHANNEL.name] = {};
         text.slice(0, start) +
         "[" +
         tag.code +
-        "]â€Š" +
+        "]" +
         text.slice(start, end) +
-        "â€Š[/" +
+        "[/" +
         tag.code +
         "]" +
         text.slice(end);
