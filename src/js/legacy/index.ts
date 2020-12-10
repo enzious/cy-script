@@ -5,6 +5,7 @@ import './bootstrap-dialog.js';
 import './external_chatline.js';
 import './external_extended_tab_complete.js';
 import './external_hotkeys.js';
+import './external_playlist.js';
 import './external_privmsg.js';
 import './external_userlist_overrides.jsx';
 import './chat-scroll.js';
