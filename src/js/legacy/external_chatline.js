@@ -1,3 +1,11 @@
+/*!
+**|  CyTube Advanced Chatline
+**|  Copyright Xaekai 2014 - 2016
+**|  Version 2016.10.04.0100
+**|
+**@optional whispers
+**@preserve
+*/
 (function (CyTube_ChatLine) {
   return CyTube_ChatLine(window, document, window.jQuery, String);
 })(function (window, document, $, String, undefined) {
