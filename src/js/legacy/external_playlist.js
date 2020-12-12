@@ -35,8 +35,7 @@ function playlist(active) {
 })(function (window, document, $, undefined) {
   if (typeof Storage === "undefined") {
     console.error(
-      "[XaeTube: Enhanced Playlist]",
-      "localStorage not supported. Aborting load."
+      "[XaeTube: Enhanced Playlist]","localStorage not supported. Aborting load."
     );
     return;
   } else {
