@@ -15,6 +15,10 @@ class CyScriptConfigs {
   setConfig(roomId: string) {
     this.config = this.configs.get(roomId.toLowerCase());
   }
+
+  getConfig(roomId: string): CyScriptConfig | undefined {
+    return this.configs.get(roomId.toLowerCase());
+  }
 }
 
 interface RoomInfo {

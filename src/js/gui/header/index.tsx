@@ -157,7 +157,7 @@ let Header = Backbone.View.extend({
     ]
       .filter(roomId => roomId !== null)
       .map((roomId) => {
-        return cyScriptConfigs.configs.get(roomId)?.roomInfo
+        return cyScriptConfigs.getConfig(roomId)?.roomInfo
       })
       .filter(roomInfo => roomInfo !== null)
 
