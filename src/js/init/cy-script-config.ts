@@ -9,11 +9,11 @@ class CyScriptConfigs {
   config: CyScriptConfig;
 
   addConfig(roomId: string, config: CyScriptConfig) {
-    this.configs.set(roomId, config);
+    this.configs.set(roomId.toLowerCase(), config);
   }
 
   setConfig(roomId: string) {
-    this.config = this.configs.get(roomId);
+    this.config = this.configs.get(roomId.toLowerCase());
   }
 }
 
