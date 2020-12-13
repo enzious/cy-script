@@ -98,7 +98,7 @@ var initializePlaylist = () => {
       <div class="plcontrol-collapse col-lg-12 col-md-12 collapse" id="filterplaylistcontrol"
           style="padding-bottom: 15px; height: 0px;">
         <div class="vertical-spacer"></div>
-        <div class="input-group">
+        <div class="input-group input-group-sm">
           <input class="form-control" id="pfinput" type="text"
               maxlength="100" placeholder="Username" />
           <span class="input-group-btn">

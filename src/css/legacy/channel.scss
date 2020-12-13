@@ -459,9 +459,7 @@ ul#queue {
 }
 .qe_blame {
   float: right;
-  font-family: Monospace;
-}
-.qe_blame {
+  white-space: pre;
   font-weight: bold;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

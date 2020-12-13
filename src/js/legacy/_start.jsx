@@ -30,5 +30,9 @@ window[CHANNEL.name].modulesOptions = {
   },
   playlist: {
     timeEstimates: true,
+    recentMedia: true,
+    inlineBlame: true,
+    volumeControl: true,
+    quickQuality: true,
   },
 };
