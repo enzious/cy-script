@@ -193,7 +193,7 @@ module.exports = function(env) {
     stats: {
      colors: true
     },
-    devtool: env.profile === 'debug' ? 'inline-source-map' : false,
+    devtool: profile.mode === 'development' ? 'inline-source-map' : false,
     devServer: {
       contentBase: path.resolve('build/' + env.profile),
       publicPath: profile.publicPath,
