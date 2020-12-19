@@ -26,7 +26,7 @@
       exports: true,
       hashedJS: true,
       navbar: false,
-      notepad: true,
+      notepad: false,
       regexlib: false,
       stylepad: false,
       emoteToggle: false,
