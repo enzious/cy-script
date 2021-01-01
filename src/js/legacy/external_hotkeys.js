@@ -249,10 +249,9 @@ if (!window[CHANNEL.name]) window[CHANNEL.name] = {};
         end +
         tag.code.length +
         (function () {
-          if (tag.braced) return 3;
+          if (tag.braced) return 2;
           return 0;
-        })()
-	- 1;
+        })();
       event.target.setSelectionRange(caret, caret);
     } else {
       end = $(event.target).val().length - caret + sell + start;
