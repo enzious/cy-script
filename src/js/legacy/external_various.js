@@ -90,14 +90,6 @@
           }
           poll.remove();
         });
-      $("<button/>")
-        .addClass("btn btn-warning btn-sm pull-right dismiss")
-        .html("Dismiss Poll")
-        .appendTo(poll)
-        .click(function () {
-          poll.addClass("dismissed");
-          $(this).remove();
-        });
       if (hasPermission("pollctl")) {
         $("<button/>")
           .addClass("btn btn-danger btn-sm pull-right")
