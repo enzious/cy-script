@@ -130,7 +130,35 @@
               }
             }
             socket.emit("closePoll");
-          });
+  });
+      }
+      if (hasPermission("pollctl")) {
+        $("<button/>")
+              .addClass("btn btn-warning btn-sm pull-left")
+              .html("Copy Poll")
+              .appendTo(poll)
+              .click(function () {
+                var parent = $(this).parent();
+                var title = $("<span>").html(parent.data()["title"]).text();
+                var polloptions = JSON.parse(parent.data()["options"]);
+                polloptions.forEach((item, index, array) => {
+                  array[index] = $("<span>").html(item).text();
+                });
+                $("#pollwrap .poll-menu > .btn-danger").click();
+                $("#newpollbtn").click();
+                var menu = $("#pollwrap .poll-menu");
+                var addbtn = menu.find("button:contains(Add Option)");
+                menu.find("strong:contains(Title)").next("input").val(title);
+                menu.find(".poll-menu-option").remove();
+                for (var i = 0; i < polloptions.length; i++) {
+                  $("<input/>")
+                    .addClass("form-control")
+                    .attr("type", "text")
+                    .addClass("poll-menu-option")
+                    .val(polloptions[i])
+                    .insertBefore(addbtn);
+                }
+              });
       }
       $("<h3/>").html(execEmotes(data.title)).appendTo(poll);
       function decorate(text) {

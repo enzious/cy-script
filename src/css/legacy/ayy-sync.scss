@@ -511,6 +511,13 @@ body.fw #newmessages-indicator {
         margin-right: -16px;
       }
     }
+    & > .btn.pull-left {
+        margin-top: -15px;
+        margin-left: 2px;
+        &:first-child {
+          margin-right: -16px;
+      }
+    }
     .label.label-default.pull-right {
       margin-right: -16px;
     }
