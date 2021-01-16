@@ -12,3 +12,5 @@
 /src/js/configs/private/**
 !/src/js/configs/private/.preserve
 /configs.overlay.json
+*/Thumbs.db
+.ftpconfig

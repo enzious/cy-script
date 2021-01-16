@@ -32,7 +32,12 @@ window[CHANNEL.name].modulesOptions = {
     timeEstimates: true,
     recentMedia: true,
     inlineBlame: true,
+    moveReporting: true,
     volumeControl: true,
     quickQuality: true,
+    thumbnails: true
+  },
+  various: {
+    notepad: true
   },
 };

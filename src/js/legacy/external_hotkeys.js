@@ -102,10 +102,10 @@ if (!window[CHANNEL.name]) window[CHANNEL.name] = {};
     if (!event.shiftKey && !event.ctrlKey && event.altKey) {
       if (
         event.which === KEYCODE.W &&
-        $("#cinematoggle").length &&
+        $("#fw-leftcontrols-toggle").length &&
         !(localStorage.getItem(`BrazilianKeyboard`) === "true")
       ) {
-        $("#cinematoggle").click();
+        $("#fw-leftcontrols-toggle").click();
         event.preventDefault();
         return false;
       }
@@ -249,7 +249,7 @@ if (!window[CHANNEL.name]) window[CHANNEL.name] = {};
         end +
         tag.code.length +
         (function () {
-          if (tag.braced) return 3;
+          if (tag.braced) return 2;
           return 0;
         })();
       event.target.setSelectionRange(caret, caret);
