@@ -954,6 +954,38 @@ div#plmeta {
     background-color: black;
 }
 
+.actual-spoiler:before {
+    content: "Actual Spoiler:";
+    color: white;
+    text-indent: 0;
+    display: inline-block;
+    background-color: red;
+}
+
+.actual-spoiler {
+  color:black;
+  background-color: black;
+}
+
+.actual-spoiler:hover {
+  color: white;
+}
+
+.actual-spoiler img {
+  color: black;
+  background-color: black;
+  -webkit-filter: brightness(0%);
+  /* Safari */
+
+  filter: brightness(0%);
+  background-color: none;
+}
+
+.actual-spoiler:hover img {
+  -webkit-filter: none;
+  filter: none;
+}
+
 .threed{
    display: inline-block;
    color: white;
