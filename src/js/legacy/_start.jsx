@@ -38,6 +38,7 @@ window[CHANNEL.name].modulesOptions = {
     thumbnails: true
   },
   various: {
-    notepad: true
+    notepad: true,
+    emoteToggle: true
   },
 };

@@ -37,6 +37,9 @@
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
+#EmotesToggle {
+  display: none;
+}
 a.navbar-brand {
   //background-image: url('https://i.imgur.com/w5DOMDa.png') !important;
   background-repeat: no-repeat;
@@ -999,4 +1002,58 @@ div#plmeta {
 
 .sepia-img img {
   filter: sepia(1);
+}
+
+.actual-spoiler {
+  color:black;
+  background-color: black;
+}
+
+.actual-spoiler:hover {
+  color: white;
+}
+
+.actual-spoiler img {
+  color: black;
+  background-color: black;
+  -webkit-filter: brightness(0%);
+  /* Safari */
+
+  filter: brightness(0%);
+  background-color: none;
+}
+
+.actual-spoiler:hover img {
+  -webkit-filter: none;
+  filter: none;
+}
+
+.smol img {
+  max-width: 20px;
+  max-height: 20px;
+}
+
+.hashtag {
+  color: #186a79;
+}
+
+.lite-green {
+  color: #1cd746;
+}
+
+.exclamation-red {
+  color: red;
+}
+
+.spin-emote img {
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
