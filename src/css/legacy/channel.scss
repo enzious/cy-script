@@ -1013,6 +1013,14 @@ div#plmeta {
   color: white;
 }
 
+.actual-spoiler:before {
+    content: "Actual Spoiler:";
+    color: white;
+    text-indent: 0;
+    display: inline-block;
+    background-color: red;
+}
+
 .actual-spoiler img {
   color: black;
   background-color: black;
@@ -1056,4 +1064,28 @@ div#plmeta {
   to {
     transform: rotate(359deg);
   }
+}
+
+#EmotesToggle {
+  display: none;
+}
+
+.label.label-default.pull-right::before {
+  content: attr(title) " | ";
+}
+
+.rainbow {
+    animation: rainbow 6s steps(64) infinite;
+}
+
+@keyframes rainbow {
+ from {
+	filter: sepia(100%) saturate(300%) brightness(100%) hue-rotate(10deg);
+    }
+  to {
+	filter: sepia(100%) saturate(300%) brightness(100%) hue-rotate(360deg);
+    }
+
+body form-control {
+	display: none;
 }
